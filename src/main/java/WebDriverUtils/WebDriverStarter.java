@@ -1,7 +1,9 @@
+package WebDriverUtils;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverUtils {
+public class WebDriverStarter {
 
     private static WebDriver webDriver = null;
 
@@ -9,11 +11,9 @@ public class WebDriverUtils {
         System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver");
 
 
-        if (webDriver != null) {
-            return webDriver;
-        } else {
+        if (webDriver == null) {
             webDriver = new ChromeDriver();
-            return webDriver;
         }
+        return webDriver;
     }
 }
